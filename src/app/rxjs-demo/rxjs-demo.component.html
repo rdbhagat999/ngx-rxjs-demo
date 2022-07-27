@@ -5,35 +5,30 @@
 
   <div class="codeblock">
     <div class="cb">
-      <code>this.color$.next('white'); </code>
-    </div>
-
-    <div class="cb">
-      <code>this.logo$.next('fish'); </code>
-    </div>
-
-    <div class="cb">
-      <code>this.color$.next('green'); </code>
-    </div>
-
-    <div class="cb">
-      <code>this.logo$.next('dog'); </code>
-    </div>
-
-    <div class="cb">
-      <code>this.color$.next('red'); </code>
-    </div>
-
-    <div class="cb">
-      <code>this.logo$.next('bird'); </code>
-    </div>
-
-    <div class="cb">
-      <code>this.color$.next('blue'); </code>
+      <pre>
+        <code>
+          type Color = 'white' | 'green' | 'red' | 'blue';
+          type Logo = 'fish' | 'dog' | 'bird' | 'cow';
+          <br>
+          color$ = new Subject&lt;Color&gt;();
+          logo$ = new Subject&lt;Logo&gt;();
+          <br>
+          <span>*** Button Clicked ***</span>
+          <br>
+          this.logo$.next('fish');
+          this.color$.next('green');
+          <br>
+          this.logo$.next('dog');
+          this.color$.next('red');
+          <br>
+          this.logo$.next('bird');
+          this.color$.next('blue');
+        </code>
+      </pre>
     </div>
   </div>
 
-  <p>Actions</p>
+  <p>Actions: Click Button</p>
 
   <div class="actionblock">
     <div class="action">

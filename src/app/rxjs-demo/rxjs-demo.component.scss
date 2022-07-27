@@ -5,13 +5,17 @@
   color: red;
 }
 .codeblock {
-  background: blue;
+  border: 3px solid blue;
   color: white;
   padding: 5px;
   .cb {
     background: rgba($color: #000000, $alpha: 0.8);
     color: white;
     padding: 5px;
+
+    span {
+      color: yellowgreen;
+    }
   }
 }
 .actionblock {
