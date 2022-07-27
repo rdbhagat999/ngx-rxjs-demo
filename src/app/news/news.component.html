@@ -1,0 +1,8 @@
+<div *ngFor="let article of articles$ | async">
+  <h2>{{ article?.title }}</h2>
+
+  <p>
+    {{ article?.description }}
+  </p>
+  <a href="{{ article?.url }}" target="_blank">Read full article</a>
+</div>

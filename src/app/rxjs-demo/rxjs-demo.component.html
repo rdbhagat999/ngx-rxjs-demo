@@ -1,0 +1,58 @@
+<h2>Rxjs Demo!</h2>
+
+<p>Open web console to see output</p>
+
+<div class="codeblock">
+  <div class="cb">
+    <code>this.color$.next('white'); </code>
+  </div>
+
+  <div class="cb">
+    <code>this.logo$.next('fish'); </code>
+  </div>
+
+  <div class="cb">
+    <code>this.color$.next('green'); </code>
+  </div>
+
+  <div class="cb">
+    <code>this.logo$.next('dog'); </code>
+  </div>
+
+  <div class="cb">
+    <code>this.color$.next('red'); </code>
+  </div>
+
+  <div class="cb">
+    <code>this.logo$.next('bird'); </code>
+  </div>
+
+  <div class="cb">
+    <code>this.color$.next('blue'); </code>
+  </div>
+</div>
+
+<p>Actions</p>
+
+<div>
+  <button (click)="zipButtonClicked()">zipButtonClicked</button>
+
+  <button (click)="combineLatestButtonClicked()">
+    combineLatestButtonClicked
+  </button>
+
+  <button (click)="withLatestFromButtonClicked()">
+    withLatestFromButtonClicked
+  </button>
+
+  <button (click)="forkjoinTakeFirstButtonClicked()">
+    forkjoinTakeFirstButtonClicked
+  </button>
+
+  <button (click)="forkJoinButtonClicked()">forkJoinButtonClicked</button>
+
+  <h3>
+    Source code:
+    <a target="_blank" href="https://github.com/rdbhagat999">Github</a>
+  </h3>
+</div>
