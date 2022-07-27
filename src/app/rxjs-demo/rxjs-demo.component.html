@@ -1,58 +1,99 @@
-<h2>Rxjs Demo!</h2>
+<div class="container">
+  <h2>Rxjs Demo!</h2>
 
-<p>Open web console to see output</p>
+  <p class="info"><em>Open web console to see output</em></p>
 
-<div class="codeblock">
-  <div class="cb">
-    <code>this.color$.next('white'); </code>
+  <div class="codeblock">
+    <div class="cb">
+      <code>this.color$.next('white'); </code>
+    </div>
+
+    <div class="cb">
+      <code>this.logo$.next('fish'); </code>
+    </div>
+
+    <div class="cb">
+      <code>this.color$.next('green'); </code>
+    </div>
+
+    <div class="cb">
+      <code>this.logo$.next('dog'); </code>
+    </div>
+
+    <div class="cb">
+      <code>this.color$.next('red'); </code>
+    </div>
+
+    <div class="cb">
+      <code>this.logo$.next('bird'); </code>
+    </div>
+
+    <div class="cb">
+      <code>this.color$.next('blue'); </code>
+    </div>
   </div>
 
-  <div class="cb">
-    <code>this.logo$.next('fish'); </code>
+  <p>Actions</p>
+
+  <div class="actionblock">
+    <div class="action">
+      <p>
+        When we zip color$ and logo$, we expect to receive an array of 2 items
+        during subscribe, the first item is color and the second is logo (follow
+        their orders in zip function). zip operator can accept more than 2
+        observables - no matter how many observables, they must all wait for
+        each other, no man left behind!
+      </p>
+      <button (click)="zipButtonClicked()">zipButtonClicked</button>
+    </div>
+
+    <div class="action">
+      <p>
+        I call combineLatest operator the independent operator. They are
+        independent and don’t wait for each other. Either the color or logo
+        value change will trigger the log.
+      </p>
+      <button (click)="combineLatestButtonClicked()">
+        combineLatestButtonClicked
+      </button>
+    </div>
+
+    <div class="action">
+      <p>
+        I call withLatestFrom operator the primary/secondary operator. At first,
+        the primary must meet the secondary. After that, the primary will take
+        the lead, giving command. The secondary will follow.
+      </p>
+      <button (click)="withLatestFromButtonClicked()">
+        withLatestFromButtonClicked
+      </button>
+    </div>
+
+    <div class="action">
+      <p>
+        forkJoin is a special case of combineLatest. It will wait for all
+        observables to complete.
+      </p>
+      <button (click)="forkjoinTakeFirstButtonClicked()">
+        forkjoinTakeFirstButtonClicked
+      </button>
+    </div>
+
+    <div class="action">
+      <p>
+        forkJoin is a special case of combineLatest. It will wait for all
+        observables to complete.
+      </p>
+      <button (click)="forkJoinButtonClicked()">forkJoinButtonClicked</button>
+    </div>
+
+    <div>
+      <h3>
+        Source code:
+        <a target="_blank" href="https://github.com/rdbhagat999/ngx-rxjs-demo"
+          >Github</a
+        >
+      </h3>
+    </div>
   </div>
-
-  <div class="cb">
-    <code>this.color$.next('green'); </code>
-  </div>
-
-  <div class="cb">
-    <code>this.logo$.next('dog'); </code>
-  </div>
-
-  <div class="cb">
-    <code>this.color$.next('red'); </code>
-  </div>
-
-  <div class="cb">
-    <code>this.logo$.next('bird'); </code>
-  </div>
-
-  <div class="cb">
-    <code>this.color$.next('blue'); </code>
-  </div>
-</div>
-
-<p>Actions</p>
-
-<div>
-  <button (click)="zipButtonClicked()">zipButtonClicked</button>
-
-  <button (click)="combineLatestButtonClicked()">
-    combineLatestButtonClicked
-  </button>
-
-  <button (click)="withLatestFromButtonClicked()">
-    withLatestFromButtonClicked
-  </button>
-
-  <button (click)="forkjoinTakeFirstButtonClicked()">
-    forkjoinTakeFirstButtonClicked
-  </button>
-
-  <button (click)="forkJoinButtonClicked()">forkJoinButtonClicked</button>
-
-  <h3>
-    Source code:
-    <a target="_blank" href="https://github.com/rdbhagat999">Github</a>
-  </h3>
 </div>
