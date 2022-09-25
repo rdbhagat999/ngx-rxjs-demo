@@ -23,6 +23,7 @@ export class ServerErrorInterceptor implements HttpInterceptor {
         // resetOnSuccess: true,
       }),
       catchError((error: HttpErrorResponse) => {
+        console.log('ServerErrorInterceptor::throwError');
         if (error.status === 401) {
           // refresh token
           return throwError(() => new Error('Unauthorized'));
