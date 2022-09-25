@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { catchError, Observable, of } from 'rxjs';
 import { NewsApiService } from '../news-api.service';
 
 @Component({
@@ -13,6 +13,11 @@ export class NewsComponent implements OnInit {
   constructor(private newsapi: NewsApiService) {}
 
   ngOnInit(): void {
-    this.articles$ = this.newsapi.getNews();
+    this.articles$ = this.newsapi.getNews().pipe(
+      catchError((err) => {
+        console.log('Error:NewsComponent::getNews');
+        return of([]);
+      })
+    );
   }
 }

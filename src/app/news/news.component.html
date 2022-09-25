@@ -1,8 +1,18 @@
-<div *ngFor="let article of articles$ | async">
-  <h2>{{ article?.title }}</h2>
+<div>
+  <h1>News Articles</h1>
+  <ng-container *ngIf="articles$ | async as articles">
+    <div *ngIf="articles?.length == 0; else elseBlk">
+      <h3>No articles found.</h3>
+    </div>
 
-  <p>
-    {{ article?.description }}
-  </p>
-  <a href="{{ article?.url }}" target="_blank">Read full article</a>
+    <ng-template #elseBlk>
+      <div *ngFor="let article of articles">
+        <h2>{{ article?.title }}</h2>
+        <p>
+          {{ article?.description }}
+        </p>
+        <a href="{{ article?.url }}" target="_blank">Read full article</a>
+      </div>
+    </ng-template>
+  </ng-container>
 </div>
